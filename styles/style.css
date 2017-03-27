@@ -1,0 +1,18 @@
+body {
+  background-color: black;
+  color: white;
+  position: relative
+}
+
+.page2 {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+}
+
+.gameZone {
+  border: 3px dashed white;
+  width: 1000px;
+  height: 600px;
+  margin : auto;
+}
