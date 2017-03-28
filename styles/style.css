@@ -1,3 +1,5 @@
+/*********  CONTOUR JEU  *********/
+
 body, html {
   height:100%;
 }
@@ -24,6 +26,8 @@ h1{
   font-weight: 100;
 }
 
+/**********  START PAGE  ***********/
+
 .startPage {
   border: 3px dashed orange;
   background-color: darkslateblue;
@@ -37,6 +41,8 @@ h1{
   display: block;
 }
 
+/***********  GAME  ************/
+
 .game{
   display: none;
   width: 1000px;
@@ -44,9 +50,8 @@ h1{
   position: relative;
 }
 
-.character{
+#character{
   position: absolute;
-  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2000;
@@ -55,36 +60,13 @@ h1{
   height: 60px;
 }
 
-
-
-
-
-/*
-.gameZone {
-  width: 900px;
-  height: 500px;
-  overflow: hidden;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  background-image: url(../images/testBackground.jpg);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}*/
-
-
 #gameBackground{
   width: 3600px;
   height: 500px;
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   left: 0;
   background-image: url(../images/testBackground2.png);
   background-size: contain;
   background-repeat: no-repeat;
-  
-
 }
