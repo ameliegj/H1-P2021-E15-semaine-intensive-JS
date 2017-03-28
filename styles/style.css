@@ -1,5 +1,5 @@
 body, html {
-    height:100%;
+  height:100%;
 }
 
 body {
@@ -16,19 +16,51 @@ body {
   top: 20px;
 }
 
+h1{
+  font-family: 'Jura', sans-serif;
+  font-size: 70px;
+  margin-top:0;
+  padding-bottom: 50px;
+  font-weight: 100;
+}
+
 .startPage {
   border: 3px dashed orange;
+  background-color: darkslateblue;
   width: 100%;
   height:80%;
   margin : auto;
   position: absolute;
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   right: auto;
+  display: block;
 }
 
+.game{
+  display: none;
+  width: 1000px;
+  height: 500px;
+  position: relative;
+}
+
+.character{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  background-color:  firebrick;
+  width: 25px;
+  height: 60px;
+}
+
+
+
+
+
+/*
 .gameZone {
-  border: 3px dashed white;
   width: 900px;
   height: 500px;
   overflow: hidden;
@@ -36,4 +68,23 @@ body {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
+
+  background-image: url(../images/testBackground.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}*/
+
+
+#gameBackground{
+  width: 3600px;
+  height: 500px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  background-image: url(../images/testBackground2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+
 }
