@@ -2,10 +2,10 @@
 
 body, html {
   height:100%;
+  background-color: black;
 }
 
 body {
-  background-color: black;
   color: white;
   position: relative;
   overflow:hidden;
@@ -27,7 +27,7 @@ h1{
 }
 
 /**********  START PAGE  ***********/
-
+/*
 .startPage {
   border: 3px dashed orange;
   background-color: darkslateblue;
@@ -39,34 +39,45 @@ h1{
   bottom: 30px;
   right: auto;
   display: block;
-}
+}*/
 
 /***********  GAME  ************/
+canvas{
+  border:1px solid white;
+}
+canvas { 
+  display:block; 
+  border:1px solid black;
+  background: none;
 
-.game{
-  display: none;
-  width: 1000px;
-  height: 500px;
-  position: relative;
 }
 
-#character{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2000;
-  background-color:  firebrick;
-  width: 25px;
-  height: 60px;
+.gameBackground {
+  background-image: url(../images/MAPfinal.png);
+  height: 600px;
+  width: 21000px;
+
 }
 
-#gameBackground{
-  width: 3600px;
-  height: 500px;
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  background-image: url(../images/testBackground2.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

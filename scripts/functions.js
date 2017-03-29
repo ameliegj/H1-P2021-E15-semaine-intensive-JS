@@ -1,71 +1,44 @@
-function goRight() {
-  console.log("|->| key pressed");
-  $("#gameBackground").css("left", "-=2px");
-}
+// position displayed level
+var scroll_x = 0;
+// scroll position at the beginning of the game loop
+var scroll_x_start = 0;
+// 5 free lines on top, 13 lines of level content
 
+
+
+
+function goRight() {
+    if (player.velX < player.speed) {
+      player.velX++;
+    }
+  
+}
 
 function goLeft() {
-  console.log("|<-| key pressed");
-  $("#gameBackground").css("left", "+=2px");
-}
-
-/*******************/
-
-
-function jumpAnime() {
-  $("#character").animate({
-    bottom: "200px",
-  }, 10, "linear", function() {
-      console.log(currentPosY);
-
-    $("#character").animate({
-      bottom: "0px",
-    }, 10, "swing");
-  })
-  console.log(currentPosY);
-}
-
-
-/*******************/
-var bottomInitial = 0; // hauteur du sol de base
-
-function jump() {
-//boucle for
- // console.log("|^| key pressed");
-  var currentBottom = bottomInitial;
-
-  currentPosY = parseInt($("#character").css("bottom"));
-//  console.log(currentBottom);
-
-
-  if (currentPosY == currentBottom) {
-   // console.log("jump !");
-    jumpAnime();
-  }
-
-  
-  
+    if (player.velX > -player.speed) {
+      player.velX--;
+    }
   
 }
-
-
-/*
-function jumpAnim() {
-  var bottomTemp = currentBottom;
-  $("#character").animate({
-    bottom: "100px",
-  }, 200, "linear", function () {
-    $("#character").animate({
-      bottom: currentBottom,
-    }, 200, "linear");
-
-  });
-
-*/
-
-
-/*
-    $("#character").css("bottom", "+=100px");
-
-    $("#character").css("bottom", bottom);
-  */
+/****  Platformes and obstacles ****/
+var boxes = []
+ 
+// dimensions
+boxes.push({
+    x: 0,
+    y: 0,
+    width: 10,
+    height: height
+});
+boxes.push({
+    x: 0,
+    y: height - 2,
+    width: width,
+    height: 50
+});
+boxes.push({
+    x: width - 10,
+    y: 0,
+    width: 50,
+    height: height
+});

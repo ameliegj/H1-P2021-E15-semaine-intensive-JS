@@ -5,40 +5,25 @@
     <title>Out of light</title>
     <link rel="stylesheet" href="styles/style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styleMap.css"/>
   </head>
   <body>
     <h1>OUT OF LIGHT</h1>
     <span class="page2">Lien vers la page 2</span>
 
     <!------  START PAGE -------->
+    <!--
     <div class="startPage">
       <button>Start</button>
       <p>
         <label>Votre pseudo</label> : <input type="text" name="pseudo" />
       </p>
-    </div>
+    </div>-->
     <!---- GAME ----->
-    <div class="game">    
-      <!---- CHARACTER ---->
-      <div id="character"></div>
-
-
-
-      <!---- GAME BACKGROUND ---->
-      <div id="gameBackground">
-        <!--définir ici les obstacles par rapport au fond-->
-
-        <!--les divs ne doivent pas apparaitre sur la page, elles doivent seulement exister dans le code-->
-
-      <div class="ground"></div>
-
-      </div>
-
-    </div>
+      <div class="gameBackground">
+      <canvas id="canvas"></canvas>
+     </div>
     <script type="text/javascript" src="scripts/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="scripts/functions.js"></script>
-
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
