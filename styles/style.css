@@ -42,21 +42,21 @@ h1{
 }*/
 
 /***********  GAME  ************/
-canvas{
-  border:1px solid white;
-}
+
 canvas { 
   display:block; 
-  border:1px solid black;
+  border:1px solid white;
   background: none;
-
+  
 }
 
 .gameBackground {
   background-image: url(../images/MAPfinal.png);
   height: 600px;
   width: 21000px;
-
+  position: absolute;
+  left: 0px;
+  bottom: 20px;
 }
 
 
