@@ -8,7 +8,7 @@ body, html {
 body {
   color: white;
   position: relative;
-  overflow:hidden;
+  /*overflow:hidden;*/
   text-align: center;
 }
 
@@ -51,9 +51,9 @@ canvas {
 }
 
 #gameBackground {
-  background-image: url(../images/MAPfinal.png);
+  background-image: url(../images/MAPparcours.png);
   height: 600px;
-  width: 21000px;
+  width: 21619px;
 
 }
 

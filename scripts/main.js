@@ -21,7 +21,7 @@
     },
     keys = [],
     friction = 0.8,
-    gravity = 0.3,
+    gravity = 0.4,
     deplacement = 0,
     middle = window.innerWidth/2,
     boxes = [];
@@ -80,7 +80,7 @@ createBoxes();
 
     /** blocs color : **/
 
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "red"; //rgba(0,0,0,0)
     ctx.beginPath();
 
 
