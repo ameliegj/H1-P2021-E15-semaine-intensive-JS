@@ -7,7 +7,7 @@
 
   var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
-    width = 21000,
+    width = 21619,
     height = 600,
     player = {
       x: 20,
@@ -21,8 +21,13 @@
     },
     keys = [],
     friction = 0.8,
-    gravity = 0.3;
+    gravity = 0.3,
+    deplacement = 0,
+    middle = window.innerWidth/2,
+    boxes = [];
 
+/** generate boxes : **/
+createBoxes();
 
   canvas.width = width;
   canvas.height = height;
@@ -32,39 +37,7 @@
 
 
 
-  /******* PLATFORM AND OBSTACLES ********/
-
-  var boxes = [];
-
-  // dimensions
-
-  boxes.push({
-    x: 0,
-    y: height - 2,
-    width: width,
-    height: 50
-  });
-  boxes.push({
-    x: width - 10,
-    y: 0,
-    width: 50,
-    height: height
-  });
-  boxes.push({
-    x: 0,
-    y: 500,
-    width: width,
-    height: 100
-  });
-  boxes.push({
-    x: 0,
-    y: 500,
-    width: width,
-    height: 120
-  });
-
-  /***** end platform and obstacles ****/
-
+  
 /* sert à */
   function update() {
     // check keys
@@ -89,6 +62,7 @@
 
     player.x += player.velX;
     player.y += player.velY;
+    
 
     if (player.x >= width - player.width) {
       player.x = width - player.width;

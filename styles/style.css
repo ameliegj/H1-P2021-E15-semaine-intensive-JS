@@ -47,16 +47,14 @@ canvas {
   display:block; 
   border:1px solid white;
   background: none;
-  
+
 }
 
-.gameBackground {
+#gameBackground {
   background-image: url(../images/MAPfinal.png);
   height: 600px;
   width: 21000px;
-  position: absolute;
-  left: 0px;
-  bottom: 20px;
+
 }
 
 
