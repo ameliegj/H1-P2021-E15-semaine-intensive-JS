@@ -1,4 +1,4 @@
-/** gestion des déplacements : */
+/** HERO'S MOVES MANAGEMENT : */
 
 
 function goRight() {
@@ -7,13 +7,13 @@ function goRight() {
   if (player.x < middle) {
     if (player.velX < player.speed) {
       player.velX++;
-
     }
   } else {
     deplacement += player.velX;
     document.getElementById("gameBackground").style.transform = 'translateX(-'+ deplacement +'px)';
     player.velX++;
   }
+  isRight=1;
 }
 
 
@@ -27,13 +27,10 @@ function goLeft() {
     document.getElementById("gameBackground").style.transform = 'translateX(-'+ deplacement +'px)';
     player.velX--;
   }
+  isRight=0;
 }
 
-
-
-
-
-/** gestion des colisions : */
+/** COLLISIONS MANAGEMENT */
 
 function colCheck(shapeA, shapeB) {
   // get the vectors to check against
