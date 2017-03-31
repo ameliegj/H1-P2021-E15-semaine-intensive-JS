@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Out of light</title>
-    <link rel="stylesheet" href="styles/style.css"/>
-    <link href="https://fonts.googleapis.com/css?family=futura" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <img src="images/logo.png" alt="logo Out Of Light" id="logo"/>
-    </header>
-    <span class="about">+ d'infos</span>
 
-    <!------  START PAGE -------->
+<head>
+  <meta charset="utf-8" />
+  <title>Out of light</title>
+  <link rel="stylesheet" href="styles/ennemies.css" />
 
-    <div class="startPage">
-     <img src="images/logo_menu.png" alt="logo out of the light special menu"/>
-      <button>Start</button>
-      <div class="controle">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <img src="images/logo.png" alt="logo Out Of Light" id="logo" />
+  </header>
+  <a href="pages/aboutthegame.html" title="second page"><span class="about">+ d'infos</span></a>
+
+  <!------  START PAGE -------->
+
+  <div class="startPage">
+    <img src="images/logo_menu.png" alt="logo out of the light special menu" />
+    <button>Start</button>
+    <div class="controle">
       <p>USE</p>
       <div>
-      <img src="images/touche-gauche.png" alt="touche gauche"/>
-      <img src="images/touche-haut.png" alt="touche gauche"/>
-      <img src="images/touche-droite.png" alt="touche gauche"/>
+        <img src="images/touche-gauche.png" alt="touche gauche" />
+        <img src="images/touche-haut.png" alt="touche gauche" />
+        <img src="images/touche-droite.png" alt="touche gauche" />
       </div>
       <p>TO MOVE</p>
-      </div>
     </div>
-    <!---- GAME ----->
-    <div id="gameBackground">
-      <div class="attack">
-        <div class ='shoot'></div>
-        <img class="slash" >
-      </div>
-      <canvas id="canvas"></canvas>
-
+  </div>
+  
+  <!---- GAME ----->
+  
+  <div id="gameBackground">
+    <div class="attack">
+      <div class='shoot'></div>
+      <img class="slash">
+      <div class="ennemy ennemy1"></div>
+      <div class="ennemy ennemy2"></div>
+      <div class="ennemy ennemy3"></div>
+      <div class="ennemy ennemy4"></div>
+      <div class="ennemy ennemy5"></div>
+      <div class="ennemy ennemy6"></div>
+      <div class="ennemy ennemy7"></div>
+      <div class="ennemy ennemy8"></div>
     </div>
+    <canvas id="canvas"></canvas>
 
+  </div>
+  <audio src="audio/jump_2.mp3"></audio>
+  <audio src="audio/ritual.mp3" autoplay="autoplay"></audio>
 
+  <script type="text/javascript" src="scripts/jquery-3.2.0.min.js"></script>
+  <script type="text/javascript" src="scripts/menu.js"></script>
+  <script type="text/javascript" src="scripts/boxes.js"></script>
+  <script type="text/javascript" src="scripts/functions.js"></script>
+  <script type="text/javascript" src="scripts/fight.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+</body>
 
-    <script type="text/javascript" src="scripts/jquery-3.2.0.min.js"></script>
-    <script type="text/javascript" src="scripts/menu.js"></script>
-
-    <script type="text/javascript" src="scripts/boxes.js"></script>
-    <script type="text/javascript" src="scripts/functions.js"></script>
-    <script type="text/javascript" src="scripts/fight.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
-  </body>
 </html>

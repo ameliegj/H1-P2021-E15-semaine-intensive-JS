@@ -26,10 +26,8 @@ var canvas = document.getElementById("canvas"),
     boxes = [],
     //fight :
     slashLimiter = 0,
-
     isRight =1;
 
-/* gifs perso : */
 /* index page responsive (for height only) 
  make the header smaller to let enough place for the game on the page */
 if (window.innerHeight < 700) {
@@ -112,7 +110,6 @@ function update() {
 
   ctx.clearRect(0, 0, width, height);
 
-
   /** blocs color : **/
 
   ctx.fillStyle = "green"; //rgba(0,0,0,0)
@@ -141,34 +138,8 @@ function update() {
     player.velY = 0;
   }
 
-
-  //walkRight.onload = function(){
-  // instructions appelant drawImage ici
+  
   ctx.drawImage(walkRight, (player.x-(player.height/2)), (player.y-(player.height/2)));
-
-
-  //}
-
-  // ANIMATION DU PERSONNAGE :
-  //setInterval("Time()", 1000);
-
-  //switch(WRTimeVar) {
-  //  case 0:
-  //    walkRight.src = 'images/walkRight.gif';
-  //    break;
-  //  case 1:
-  //    walkRight.src = 'images/walkRight.gif';
-  //    break;
-  //  case 2:
-  //    walkRight.src = 'images/walkRight.gif';
-  //    break;
-  //  case 3:
-  //    walkRight.src = 'images/walkRight.gif';
-  //    break;
-  //  default:
-  //    walkRight.src = 'images/walkRight.gif';
-  //}
-
 
   requestAnimationFrame(update);
 }

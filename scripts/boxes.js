@@ -1,7 +1,5 @@
 /******* PLATFORM AND OBSTACLES ********/
 
-
-
 // dimensions
 function createBoxes(){
 

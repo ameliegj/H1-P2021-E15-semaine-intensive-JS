@@ -66,3 +66,24 @@ function colCheck(shapeA, shapeB) {
   }
   return colDir;
 }
+
+
+function colCheckGameOver(shapeA, shapeB) {
+  // get the vectors to check against
+  var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2));
+  var vY = (shapeA.y + (shapeA.height / 2)) - (shapeB.y + (shapeB.height / 2)),
+      // add the half widths and half heights of the objects
+      hWidths = (shapeA.width / 2) + (shapeB.width / 2),
+      hHeights = (shapeA.height / 2) + (shapeB.height / 2),
+      colDir = null;
+
+  // if the x and y vector are less than the half width or half height, they we must be inside the object, causing a collision
+  if (Math.abs(vX) < hWidths && Math.abs(vY) < hHeights) {
+    gameOver() ;
+  }
+}
+
+
+function gameOver() {
+  location.reload();
+}
