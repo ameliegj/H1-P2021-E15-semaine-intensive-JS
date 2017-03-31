@@ -4,20 +4,29 @@
     <meta charset="utf-8"/>
     <title>Out of light</title>
     <link rel="stylesheet" href="styles/style.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=futura" rel="stylesheet">
   </head>
   <body>
-    <h1>OUT OF LIGHT</h1>
-    <span class="page2">Lien vers la page 2</span>
+    <header>
+      <img src="images/logo.png" alt="logo Out Of Light" id="logo"/>
+    </header>
+    <span class="about">+ d'infos</span>
 
     <!------  START PAGE -------->
-    <!--
-<div class="startPage">
-<button>Start</button>
-<p>
-<label>Votre pseudo</label> : <input type="text" name="pseudo" />
-</p>
-</div>-->
+
+    <div class="startPage">
+     <img src="images/logo_menu.png" alt="logo out of the light special menu"/>
+      <button>Start</button>
+      <div class="controle">
+      <p>USE</p>
+      <div>
+      <img src="images/touche-gauche.png" alt="touche gauche"/>
+      <img src="images/touche-haut.png" alt="touche gauche"/>
+      <img src="images/touche-droite.png" alt="touche gauche"/>
+      </div>
+      <p>TO MOVE</p>
+      </div>
+    </div>
     <!---- GAME ----->
     <div id="gameBackground">
       <div class="attack">
@@ -31,6 +40,8 @@
 
 
     <script type="text/javascript" src="scripts/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="scripts/menu.js"></script>
+
     <script type="text/javascript" src="scripts/boxes.js"></script>
     <script type="text/javascript" src="scripts/functions.js"></script>
     <script type="text/javascript" src="scripts/fight.js"></script>

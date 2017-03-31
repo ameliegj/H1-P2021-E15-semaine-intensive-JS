@@ -4,49 +4,111 @@ body, html {
   height:100%;
   background-color: black;
   overflow:hidden;
-}
-
-body {
-  color: white;
-  position: relative;
-  overflow:hidden;
   text-align: center;
+  position: relative;
+  margin: 0;
+
 }
 
-.page2 {
+
+.about {
   position: absolute;
   right: 40px;
   top: 20px;
+  font-family: futura, sans-serif;
+  margin-top: 10px;
+  transition: 0.6s;
+  font-size: 16px;
 }
 
-h1{
-  font-family: 'Jura', sans-serif;
-  font-size: 70px;
-  margin-top:0;
-  padding-bottom: 50px;
-  font-weight: 100;
+.about:hover {
+
+  font-family: futura, sans-serif;
+  font-size: 18px;
+  border-bottom: 4px solid black;
+}
+
+header {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+#logo{
+  height: 80px;
+  width: auto;
+  transform: translateY(30px);
+  z-index: 20;
 }
 
 /**********  START PAGE  ***********/
-/*
-.startPage {
-border: 3px dashed orange;
-background-color: darkslateblue;
-width: 100%;
-height:80%;
-margin : auto;
-position: absolute;
-position: absolute;
-bottom: 30px;
-right: auto;
-display: block;
-}*/
 
+.startPage {
+  background-color: black;
+  width: 100%;
+  height:620px;
+  margin : auto;
+  position: absolute;
+  bottom: 0px;
+  right: auto;
+  display: block;
+  z-index: 100;
+  background-image: url(../images/background-menu.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+button{
+  border : 2px solid white;
+  background: rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 10px;
+  font-family: 'futura', sans-serif;
+  font-weight: bold;
+  color: white;
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+button:hover{
+  background: black;
+  color: white;
+}
+
+p{
+  color: white;
+  font-family: 'futura', sans-serif;
+  font-size: 40px;
+  margin: 0;
+  padding: 0px 30px;
+}
+
+.startPage>img {
+  width: 200px;
+  margin: 20px;
+}
+
+.controle {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.controle img{
+  width: 45px;
+}
 /***********  GAME  ************/
 
 canvas { 
   display:block; 
-  border:1px solid white;
   background: none;
 
 }
@@ -55,7 +117,8 @@ canvas {
   background-image: url(../images/MAPparcours.png);
   height: 600px;
   width: 21619px;
-  position: relative
+  position: absolute;
+  bottom: 10px;
 
 }
 

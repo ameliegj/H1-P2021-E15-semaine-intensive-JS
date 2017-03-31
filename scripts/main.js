@@ -29,8 +29,14 @@ var canvas = document.getElementById("canvas"),
 
     isRight =1;
 
-
 /* gifs perso : */
+/* index page responsive (for height only) 
+ make the header smaller to let enough place for the game on the page */
+if (window.innerHeight < 700) {
+  document.getElementById("logo").style.height = "40px";
+  document.getElementById("logo").style.transform = "translateY(17px)";
+}
+/* end responsive */
 
 
 var  walkRight = new Image();   // Crée un nouvel objet Image
@@ -67,11 +73,8 @@ canvas.height = height;
 /**************************************/
 
 
-
-
 /* main function */
 function update() {
-
 
   // check keys
   if (keys[38]) {
@@ -89,11 +92,7 @@ function update() {
     // left arrow
     goLeft();
   }
-
-  //  if (keys[69]) {
-  //    slash();
-  //  }
-
+/* player movement coefficient*/
   player.velX *= friction;
   player.velY += gravity;
 
@@ -119,7 +118,7 @@ function update() {
   ctx.fillStyle = "green"; //rgba(0,0,0,0)
   ctx.beginPath();
 
-  /** gestion des collisions : */
+  /** collisions management : */
 
   player.grounded = false;
   for (var i = 0; i < boxes.length; i++) {
@@ -141,13 +140,6 @@ function update() {
   if (player.grounded) {
     player.velY = 0;
   }
-
-
-  /** aspect perso **/
-  //    ctx.fill();
-  //    ctx.fillStyle = "green";
-  //    ctx.fillRect(player.x, player.y, player.width, player.height);
-
 
 
   //walkRight.onload = function(){
@@ -181,9 +173,8 @@ function update() {
   requestAnimationFrame(update);
 }
 
+/* détection des touches : */
 
-
-/** détection des touches **/
 document.body.addEventListener("keydown", function (e) {
   keys[e.keyCode] = true;
 });

@@ -1,21 +1,28 @@
 $(document).ready(function () {
+  /* start page : */
+  $("button").click(function () {
+    $(".startPage").css("display", "none");
+    $(".game").css("display", "block");
+  });
+
+
 
   var box = $(".box"), //put box var in box
-    //perso = $(".perso"), //same for perso
-    ennemies = $(".ennemy"), //ennemies
-    shoot = $(".shoot"), //shoot
-    slash = $(".slash"); //and slash
+      //perso = $(".perso"), //same for perso
+      ennemies = $(".ennemy"), //ennemies
+      shoot = $(".shoot"), //shoot
+      slash = $(".slash"); //and slash
   //yPerso = 0,
   //xPerso = parseInt(perso.css("left")); // perso position
   var vitessePerso = 10, //perso speed
-    xShoot = 0, // shoot position
-    vitesseShoot = 40, // shoot speed
-    //BoxLength = parseInt(box.css("width")) + 60, //width box    = lenght
-    //isRight = 1, //inverser le tir
-    shootLimiteur = 0, //the player can't shoot twice
-    slashLimiter = 0, //same for slash
-    shootCooldown = 5000, //time before you can shoot again
-    slashCooldown = 1000; //same for slash
+      xShoot = 0, // shoot position
+      vitesseShoot = 40, // shoot speed
+      //BoxLength = parseInt(box.css("width")) + 60, //width box    = lenght
+      //isRight = 1, //inverser le tir
+      shootLimiteur = 0, //the player can't shoot twice
+      slashLimiter = 0, //same for slash
+      shootCooldown = 5000, //time before you can shoot again
+      slashCooldown = 1000; //same for slash
 
 
   /****************End var******************************/
@@ -25,40 +32,36 @@ $(document).ready(function () {
 
 
   /****************End Keydow Arrows******************************/
-  console.log(ennemies);
   $(document).keydown(function (e) {
     //use arrows keys
     switch (e.which) { //characters movements
 
-    case 69: //E = slash
-      console.log(slash.css("left"));
-      if (slashLimiter === 0) { //is slash cooldown off ?
-        $('.slash').attr('src', "images/slash.png"); //first animation
-        if (isRight == 1) { //is the player face right ?
-          slash.css("transform", "rotate(20deg)"); // if yes the player slash right
-          slash.css("top", player.y + "px");
-          slash.css("left", player.x + 10 + "px");
-          slashLimiter = 1;
-          console.log("slash");
-        } else { // he is facing left
-          slash.css("transform", "rotate(180deg)"); //the player slash left
-          slash.css("top", player.y + "px"); //adjust the knife
-          slash.css("left", player.x - 30 + "px");
-          slashLimiter = 1;
-          console.log("slash");
+      case 69: //E = slash
+        if (slashLimiter === 0) { //is slash cooldown off ?
+          $('.slash').attr('src', "images/slash.png"); //first animation
+          if (isRight == 1) { //is the player face right ?
+            slash.css("transform", "rotate(20deg)"); // if yes the player slash right
+            slash.css("top", player.y + "px");
+            slash.css("left", player.x + 10 + "px");
+            slashLimiter = 1;
+          } else { // he is facing left
+            slash.css("transform", "rotate(180deg)"); //the player slash left
+            slash.css("top", player.y + "px"); //adjust the knife
+            slash.css("left", player.x - 30 + "px");
+            slashLimiter = 1;
 
+          }
+          setTimeout(function () {
+            $('.slash').attr('src', "images/slash2.png");
+          }, 150); //second animation
+          setTimeout(function () {
+            $('.slash').attr('src', "");
+            slash.css("top", 1000 + "%");
+          }, 170); //the animation diseaper 
+        } else {
+          return false;
         }
-        setTimeout(function () {
-          $('.slash').attr('src', "images/slash2.png");
-        }, 150); //second animation
-        setTimeout(function () {
-          $('.slash').attr('src', "");
-          slash.css("top", 1000 + "%");
-        }, 170); //the animation diseaper 
-      } else {
-        return false;
-      }
-      break;
+        break;
     }
   });
   /****************End Keydow Arrows and e (slash)******************************/
@@ -69,19 +72,19 @@ $(document).ready(function () {
   $(document).keydown(function (e) {
 
     switch (e.which) {
-    case 32: //space
-      while (shootLimiteur == 0) {
-        //Shoot start same place at perso
-        shootLimiteur = 1; //on indique que display = block
-        shoot.css("display", "block"); //on fait apparaitre le shoot
+      case 32: //space
+        while (shootLimiteur == 0) {
+          //Shoot start same place at perso
+          shootLimiteur = 1; //on indique que display = block
+          shoot.css("display", "block"); //on fait apparaitre le shoot
 
-        shoot.css("top", player.y + "px"); //shoot starting point
-        shoot.css("left", player.x + "px");
-        xShoot = parseInt(shoot.css("left"));
+          shoot.css("top", player.y + "px"); //shoot starting point
+          shoot.css("left", player.x + "px");
+          xShoot = parseInt(shoot.css("left"));
 
 
 
-      }
+        }
     };
   });
 
@@ -118,33 +121,32 @@ $(document).ready(function () {
   //function shootEnnemy
 
   setInterval(function () {
-      shootEnnemies(shoot, ennemies); //la fonction pour faire disparaitre les ennemis touchés
-      slashEnnemies(slash, ennemies);
-      //    if (shoot.css("display") === "none") { //permet de réinitialiser le shot limiteur et donc de tirer à nouveau
-      //        console.log(shootLimiteur);
-      //        shootLimiteur = 2; //on indique que display = none
-      //      }
-    },
-    10
-  );
+    shootEnnemies(shoot, ennemies); //la fonction pour faire disparaitre les ennemis touchés
+    slashEnnemies(slash, ennemies);
+    //    if (shoot.css("display") === "none") { //permet de réinitialiser le shot limiteur et donc de tirer à nouveau
+    //        shootLimiteur = 2; //on indique que display = none
+    //      }
+  },
+              10
+             );
 
   /***********************Set the cooldown of the shootand the slash ****************/
 
   setInterval(function () {
-      if (shootLimiteur === 1) {
-        shootLimiteur = 0;
-      }
-    },
-    shootCooldown
-  );
+    if (shootLimiteur === 1) {
+      shootLimiteur = 0;
+    }
+  },
+              shootCooldown
+             );
 
   setInterval(function () {
-      if (slashLimiter === 1) {
-        slashLimiter = 0;
-      }
-    },
-    slashCooldown
-  );
+    if (slashLimiter === 1) {
+      slashLimiter = 0;
+    }
+  },
+              slashCooldown
+             );
 
   /*********************************End of cooldown**************************/
 
